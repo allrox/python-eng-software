@@ -2,18 +2,25 @@ from linha_separadora import linha_separadora
 
 
 def estimate():
-    frequency = eval(input("Informe a frequência por semana: "))
-    formats = eval(input("Informe quantas formatos serão criados por publicação: "))
-    difficulty = eval(input("Informe um grau de complexidade de 1 (baixo), 2 (médio) ou 3 (alto): "))
-    base_pricing = 120
+    frequencia = eval(input("Informe a frequência por semana: "))
+    formatos = eval(input("Informe quantas formatos serão criados por publicação: "))
+    dificuldade = eval(input("Informe um grau de complexidade de 1 (baixo), 2 (médio) ou 3 (alto): "))
+    velocidade = eval(input("Informe 1 para normal, 2 para aumentada ou 3 para urgente: "))
+    preco_base = 120
 
-    total_publications = (frequency * formats) * 4.5
-    difficulty_tax = (difficulty / 10) + 1
+    total_de_publicacoes = (frequencia * formatos) * 4.5
+    multiplicador_dificuldade = (dificuldade / 10) + 1
 
-    your_estimate = total_publications * difficulty_tax * base_pricing
+    if velocidade == 1:
+        estimativa = total_de_publicacoes * multiplicador_dificuldade * preco_base
+    elif velocidade == 2:
+        estimativa = ( total_de_publicacoes * multiplicador_dificuldade * preco_base ) * 1.2
+    else:
+        estimativa = (total_de_publicacoes * multiplicador_dificuldade * preco_base) * 1.4
+
     linha_separadora("-")
-    print(f"O seu orçamento para {total_publications} posts ao mês é igual a R${round(your_estimate)}.")
-    print(f"O preço médio por publicação é R${round(your_estimate/total_publications)}")
+    print(f"O seu orçamento para {total_de_publicacoes} posts ao mês é igual a R${round(estimativa)}.")
+    print(f"O preço médio por publicação é R${round(estimativa/total_de_publicacoes)}")
 
 
 estimate()
