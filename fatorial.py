@@ -9,6 +9,7 @@ def funcao_fatorial(num):
     if num == 0 or num == 1:
         return 1
     # Calcula o fatorial multiplicando o valor de n por (n-1)
+    # O laço será finalizado quando num - 1 coincide, eventualmente, com num == 1
     return num * funcao_fatorial(num - 1)
 
 

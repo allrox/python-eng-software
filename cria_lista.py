@@ -9,3 +9,4 @@ def cria_lista(elemento, fim, intervalo):
         elemento += intervalo
 
     return lista
+
