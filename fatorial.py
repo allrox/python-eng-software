@@ -36,13 +36,14 @@ print(f"O fatorial de {n} é {funcao_fatorial_iterativo(n)}.")
 
 linha_separadora("-")
 
-def fatorial(n):
+
+def fatorial(num):
     fat = 1
-    if n == 0 or n == 1:
+    if num == 0 or num == 1:
         return fat
     else:
-        for x in range(2, n + 1):
-               fat = fat*x
+        for x in range(2, num + 1):
+            fat = fat*x
         return fat
 
 
