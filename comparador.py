@@ -49,11 +49,15 @@ linha_separadora(".")
 
 
 # Função para avaliar a média de um aluno
-def avaliar_media(x):
+def avaliar_media():
 
     # Tratamento de exceção para formato de entrada
     try:
+        x = eval(input("Informe a média do aluno: "))
+    except NameError:
+        print("Erro: Informe uma média válida!")
 
+    else:
         # Verifica se a nota média informada está na faixa válida 0 - 10
         if (x >= 0) and (x <= 10):
             if x < 5:
@@ -63,13 +67,8 @@ def avaliar_media(x):
             elif x <= 10:
                 print(f"A média {x} indica que o aluno está aprovado.")
         else:
-            print(input("Informe uma média entre 0 e 10"))
-
-    # Resposta para a exceção
-    except TypeError:
-        print("Erro: Entrada de dados incompatível!")
-
+            print("Erro: Valor fora da faixa permitida!")
 
 # Avaliando a média através da função
-x = 8
-avaliar_media(x)
+# x = "s"
+avaliar_media()
